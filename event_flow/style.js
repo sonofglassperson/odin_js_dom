@@ -1,11 +1,20 @@
 
-const start = document.querySelector('.event-start')
-const l1 = document.querySelector('.l1')
+const child = document.querySelector('.child')
+const parent = document.querySelector('.parent')
 
-start.addEventListener('click', () => {
-    
+parent.setAttribute('style', 'background-color:red;')
+
+document.addEventListener('click', () => {
+    console.log('0. document')
 });
 
-l1.addEventListener('click', () => {
-    console.log('')
+
+parent.addEventListener('click', () => {
+    console.log('1. parent event listner - div')
+
+}, {capture:true});
+
+child.addEventListener('click', (event) => {
+    console.log('2. child event listner - button')
+    //event.stopPropagation()
 });
