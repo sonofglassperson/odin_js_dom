@@ -6,7 +6,7 @@ parent.setAttribute('style', 'background-color:red;')
 
 document.addEventListener('click', () => {
     console.log('0. document')
-});
+}, {capture:true});
 
 
 parent.addEventListener('click', () => {
@@ -16,5 +16,6 @@ parent.addEventListener('click', () => {
 
 child.addEventListener('click', (event) => {
     console.log('2. child event listner - button')
+    //Stops bubbling effect
     //event.stopPropagation()
 });
