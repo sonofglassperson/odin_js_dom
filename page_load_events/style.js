@@ -1,6 +1,4 @@
 
-const child = document.querySelector('.child')
-const parent = document.querySelector('.parent')
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('dom content loaded!');
