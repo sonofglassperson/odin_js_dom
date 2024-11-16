@@ -8,4 +8,6 @@ window.addEventListener('load', (event) => {
 
     let clickDispatchEvent = new Event('click');
     btn.dispatchEvent(clickDispatchEvent)
+
+    alert(clickDispatchEvent.isTrusted) // is trusted is false because the event wasn't from a user action.
 });
