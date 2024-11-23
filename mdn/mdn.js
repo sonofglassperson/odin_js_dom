@@ -7,9 +7,7 @@ input.focus();
 
 
 input.addEventListener('input', (e) => {
-    //this.value = input.value
     this.value = e.target.value;
-    //console.log(input.value);
 })
 
 
@@ -29,15 +27,17 @@ addItem.addEventListener('click', () => {
     itemSpan.appendChild(deleteItem)
     list.appendChild(item)
 
-
-    //deleteItem.onclick = () => list.removeChild(item)
-
     input.value = '';
     input.focus();
 })
 
+//Event delegation
 list.addEventListener('click', (e) => {
-    console.log(e);
+    target = e.target;
+    if (target.tagName == 'BUTTON') {
+        listItem = target.closest('li');
+        list.removeChild(listItem)
+    }
 })
 
 
